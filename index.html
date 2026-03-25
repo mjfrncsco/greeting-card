@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hearts"></div>
+
+<div class="container">
+    <h1 class="title">Happy Moments, My Love 💖</h1>
+    <p class="subtitle">A special greeting card just for you</p>
+
+    <div class="buttons">
+        <button onclick="openAlbum()">📸 Album</button>
+        <button onclick="openPlaylist()">🎵 Playlist</button>
+        <button onclick="openLetters()">💌 Love Letters</button>
+    </div>
+
+    <!-- Album Modal -->
+    <div id="album" class="modal">
+        <span class="close" onclick="closeAlbum()">&times;</span>
+        <div class="album-content" id="albumContent">
+            <!-- Photos will be stacked here -->
+        </div>
+    </div>
+
+
+    <!-- Playlist Modal -->
+    <div id="playlist" class="modal">
+        <span class="close" onclick="closePlaylist()">&times;</span>
+        <div class="playlist-content">
+            <div class="video-container" id="videoContainer">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lY5V4hSLWY8?si=DA3-OCNFegcP_yyh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p id="videoErrorMsg" style="color:white; text-align:center; display:none; font-size:1.2em;">
+                Sorry, this video is not available for embedding. Playing default video instead.
+            </p>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
