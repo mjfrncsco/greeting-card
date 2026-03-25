@@ -67,26 +67,30 @@ function nextPhoto() {
     nextImg.addEventListener("click", nextPhoto);
 }
 
-/* Typing effect for love letter */
-const letterContent = `Dear Sweetheart,
+const letters = [
+    "My dearest love, every moment with you feels like a beautiful dream 💕",
+    "You are my sunshine on cloudy days, my happy thought in every moment ☀️",
+    "Forever and always, I cherish you more than words can say 💖"
+];
 
-Every day with you feels magical. I love every smile, every laugh, and every moment we share together. You are my heart, my soul, and my happiness.
+function openLetters() {
+    document.getElementById('letters').style.display = 'block';
+    document.querySelector('.letters-content').style.display = 'flex';
+    document.getElementById('letterDisplay').style.display = 'none';
+}
 
-Forever yours,
-❤️ Me`;
+function closeLetters() {
+    document.getElementById('letters').style.display = 'none';
+}
 
-let typingIndex = 0;
-let typingInterval;
+function openLetter(index) {
+    document.querySelector('.letters-content').style.display = 'none';
+    const display = document.getElementById('letterDisplay');
+    display.style.display = 'block';
+    document.getElementById('letterText').innerText = letters[index];
+}
 
-function startTyping() {
-    const letterText = document.getElementById("letterText");
-    if(typingInterval) clearInterval(typingInterval);
-    letterText.innerHTML = "";
-    typingIndex = 0;
-
-    typingInterval = setInterval(() => {
-        letterText.innerHTML += letterContent.charAt(typingIndex);
-        typingIndex++;
-        if(typingIndex >= letterContent.length) clearInterval(typingInterval);
-    }, 50);
+function closeLetter() {
+    document.querySelector('.letters-content').style.display = 'flex';
+    document.getElementById('letterDisplay').style.display = 'none';
 }

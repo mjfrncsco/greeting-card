@@ -1,20 +1,24 @@
+/* -------------------- Background -------------------- */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #FFC1CC, #FFDEE9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
     height: 100vh;
-    overflow: hidden;
+    background-image: url('./images/bubu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive; /* Cartoonish font */
+    color: #fff;
+    overflow-x: hidden;
     position: relative;
 }
 
+/* -------------------- Floating Hearts -------------------- */
 .hearts::before, .hearts::after {
     content: "💖";
     position: absolute;
-    font-size: 2rem;
-    animation: floatHearts 8s infinite linear;
+    font-size: 2.5rem;
+    animation: floatHearts 6s infinite linear;
 }
 
 @keyframes floatHearts {
@@ -23,6 +27,7 @@ body {
     100% { transform: translateY(-50vh) rotate(360deg); opacity: 0; }
 }
 
+/* -------------------- Container -------------------- */
 .container {
     text-align: center;
     animation: fadeIn 2s ease-in;
@@ -30,31 +35,36 @@ body {
     position: relative;
 }
 
+/* -------------------- Titles -------------------- */
 .title {
-    font-size: 3em;
-    color: #fff;
-    text-shadow: 2px 2px 10px #ff6f91;
+    font-size: 3.5em;
+    color: #ff69b4; /* hot pink */
+    text-shadow: 3px 3px 10px #fff, -2px -2px 8px #ffb6c1;
     animation: bounce 2s infinite;
 }
 
 .subtitle {
-    font-size: 1.2em;
-    color: #fff;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #fffacd; /* light yellow */
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 6px #ff69b4;
 }
 
+/* -------------------- Buttons -------------------- */
 .buttons button {
-    padding: 12px 25px;
-    margin: 10px;
+    padding: 15px 30px;
+    margin: 12px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background: linear-gradient(45deg,#ff6f91,#ff85a2);
-    color: white;
-    font-size: 1em;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
 .buttons button::after {
@@ -68,9 +78,9 @@ body {
 }
 
 .buttons button:hover::after { transform: scaleX(1); }
-.buttons button:hover { transform: scale(1.1); }
+.buttons button:hover { transform: scale(1.1) rotate(-2deg); }
 
-/* Modal */
+/* -------------------- Modal -------------------- */
 .modal {
     display: none;
     position: fixed;
@@ -81,7 +91,7 @@ body {
     background-color: rgba(0,0,0,0.9);
 }
 
-/* Close */
+/* Close button */
 .close {
     position: absolute;
     top: 20px;
@@ -90,34 +100,37 @@ body {
     font-size: 40px;
     cursor: pointer;
     z-index: 11;
+    transition: transform 0.3s;
 }
+.close:hover { transform: scale(1.2) rotate(15deg); }
 
-/* Album stacked Instax */
+/* -------------------- Album -------------------- */
 .album-content {
     position: relative;
     width: 800px;
     height: 600px;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     justify-content: center;
-    align-items: center; /* center stack vertically */
+    align-items: center;
 }
 
 .album-content img {
     position: absolute;
-    width: 700px;  
-    max-width: 95%; 
+    width: 700px;
+    max-width: 95%;
     border-top: 15px solid #fff;
     border-left: 15px solid #fff;
     border-right: 15px solid #fff;
-    border-bottom: 40px solid #fff; /* thicker bottom for Instax look */
-    border-radius: 10px;
-    box-shadow: 0px 20px 40px rgba(0,0,0,0.5); 
+    border-bottom: 40px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
     cursor: pointer;
     transition: all 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
 }
+.album-content img:hover { transform: rotate(-5deg) scale(1.05); }
 
-/* Letters */
+/* -------------------- Letters -------------------- */
 .letters-content {
     display: flex;
     justify-content: center;
@@ -127,29 +140,36 @@ body {
 
 .letter {
     background: #fff0f5;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 20px;
     width: 80%;
     max-width: 500px;
     color: #ff4d6d;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
     cursor: pointer;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.1em;
+    transition: transform 0.3s;
 }
+.letter:hover { transform: scale(1.05) rotate(-1deg); }
 
+/* -------------------- Video Modal Adjusted -------------------- */
 .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
+    width: 90vw;           /* slightly smaller width */
+    max-width: 90vw;
+    height: 70vh;          /* shorter height to leave space above and below */
+    max-height: 70vh;
+    margin: 40px auto 20px auto; /* top margin 40px, bottom 20px, centered horizontally */
+    position: relative;
 }
 
 .video-container iframe {
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
-    max-width: 90%;
-    height: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Animations */
+/* -------------------- Animations -------------------- */
 @keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
 @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-15px);} }
