@@ -90,7 +90,7 @@ for (var i = 0; i < cards.length; i++) {
         movesDisplay.innerText = `Moves: ${move}`;
         if(winCount===6){
             setTimeout(()=>{
-                alert(`Congratulations!!! You won the game in ${move} moves.`)
+                alert(`Congratulations!!! You won the game in ${move} moves. Claim your kisses to Cisco 😘`)
             }, 300)
         }
     })
