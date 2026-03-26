@@ -88,10 +88,18 @@ for (var i = 0; i < cards.length; i++) {
             winCount++;
         }
         movesDisplay.innerText = `Moves: ${move}`;
-        if(winCount===6){
-            setTimeout(()=>{
-                alert(`Congratulations!!! You won the game in ${move} moves. Claim your kisses to Cisco 😘`)
-            }, 300)
+        if(winCount === 6){
+            setTimeout(() => {
+                // show the love letter modal
+                const modal = document.getElementById('love-letter');
+                modal.style.display = 'flex';
+
+                // close button
+                const closeBtn = document.getElementById('close-letter');
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            }, 300);
         }
     })
 }

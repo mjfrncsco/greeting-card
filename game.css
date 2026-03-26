@@ -122,6 +122,39 @@ body{
     transition-delay: 0s; 
 }
 
+.love-letter-modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.love-letter-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.love-letter-content h2 {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.love-letter-content button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: pink;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 @media screen and (max-width: 767px) {
     .game-container{
         width: 100%;
